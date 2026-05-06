@@ -1,9 +1,21 @@
-{% extends "base.html" %}
 
-{% block title %}
-Hello...
-{% endblock %}
 
-{% block content %}
-<p>hi there my name is {{ user_name }}</p>
-{% endblock %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1, shrink-to-fit = no">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="form-group">
+            <input type="text" class="form-control" name="city" placeholder="Indianapolis">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="country" placeholder="US">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-info btn-block">Get Weather</button>
+        </div>
+    </body>
+</html>
