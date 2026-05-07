@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3 class="text-muted">Current Weather For {{ city }}</h3>
-<h5 class="lead text-muted">Temperature: {{ temp }} F</h5>
-<h5 class="lead text-muted">Humidity: {{ humidity }}%</h5>
-<h5 class="lead text-muted">Wind Speed: {{ wind_speed }} mph</h5>
+<h1 class="text-muted">Current Weather For {{ city }}</h3>
+<h3 class="lead text-muted">Temperature: {{ temp }} F</h5>
+<h3 class="lead text-muted">Humidity: {{ humidity }}%</h5>
+<h3 class="lead text-muted">Wind Speed: {{ wind_speed }} mph</h5>
+<form method="INTERPRET" class="card border-0 p-3 shadow-sm">
+    <div class="form-group">
+        <button class="btn btn-info btn-block">What does this mean?</button>
+    </div>
+</form>
+<br>
+<form method="BACK">
+    <div class="form-group">
+        <button class="btn btn-info btn-block">Back</button>
+    </div>
+</form>
 {% endblock content %}

@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>Welcome to Under The Weather!</h1>
+<h3>Enter a city and country below.</h5>
 <form method="POST" class="card border-0 p-3 shadow-sm">
     <div class="form-group">
         <input type="text" class="form-control" name="city" placeholder="Indianapolis">
@@ -8,6 +10,7 @@
     <div class="form-group">
         <input type="text" class="form-control" name="country" placeholder="US">
     </div>
+    <br>
     <div class="form-group">
         <button class="btn btn-info btn-block">Get Weather</button>
     </div>
