@@ -29,12 +29,3 @@ def name():
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
-
-
-city="Indianapolis"
-country = "US"
-weather_url = requests.get(f'http://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city},{country}&units=imperial')
-weather_data = weather_url.json()
-temp = round(weather_data['main']['_temp_'])
-humidity = weather_data['main']['humidity']
-wind_speed = weather_data['wind']['speed']
