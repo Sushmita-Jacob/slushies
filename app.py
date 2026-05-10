@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 api_key = "ad505b93e564160d19e153dd3ba6fa92"
 
-@app.route('/', methods = ['GET', 'POST', 'BACK'])
+@app.route('/', methods = ['GET', 'POST'])
 def index():
     if request.method == "POST":
         city = request.form['city']
@@ -17,7 +17,7 @@ def index():
         humidity = weather_data['main']['humidity']
         wind_speed = weather_data['wind']['speed']
         return render_template("result.html", temp=temp, humidity=humidity, wind_speed=wind_speed, city=city)
-    if request.method == "BACK":
+    if request.method == "GET":
         return render_template("index.html")
     user_name = "Mustafa"
     return render_template("index.html", user_name=user_name)
