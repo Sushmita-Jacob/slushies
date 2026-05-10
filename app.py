@@ -3,13 +3,14 @@ import requests
 import json
 
 app = Flask(__name__)
+api_key = "ad505b93e564160d19e153dd3ba6fa92"
 
 @app.route('/', methods = ['GET', 'POST', 'BACK', 'INTERPRET'])
 def index():
     if request.method == "POST":
         city = request.form['city']
         country = request.form['country']
-        api_key = "###"
+        api_key = "ad505b93e564160d19e153dd3ba6fa92"
         weather_url = requests.get(f'http://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city},{country}&units=imperial')
         weather_data = weather_url.json()
         temp = round(weather_data['main']['temp'])
@@ -18,8 +19,6 @@ def index():
         return render_template("result.html", temp=temp, humidity=humidity, wind_speed=wind_speed, city=city)
     if request.method == "BACK":
         return render_template("index.html")
-    if request.method == "INTERPRET":
-        return render_template("interpretations.html")
     user_name = "Mustafa"
     return render_template("index.html", user_name=user_name)
 

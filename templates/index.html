@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Welcome to Under The Weather!</h1>
-<h3>Enter a city and country below.</h5>
+<h3>Enter a city and country below to get weather data.</h5>
 <form method="POST" class="card border-0 p-3 shadow-sm">
     <div class="form-group">
         <input type="text" class="form-control" name="city" placeholder="Indianapolis">
@@ -14,6 +14,10 @@
     <div class="form-group">
         <button class="btn btn-info btn-block">Get Weather</button>
     </div>
+    <h1 class="text-muted">What does this mean?</h1>
+    <h3 class="lead-text-muted">Temperature measures average kinetic energy, or how hot something is.</h3>
+    <h3 class="lead-text-muted">Humidity measures the concentration of water vapor in the air.</h3>
+    <h3 class="lead-text-muted">Wind speed is the rate at which air moves horizontally past a specific point.</h3>
 </form>
 
 {% endblock content %}
