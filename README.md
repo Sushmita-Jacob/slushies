@@ -1,1 +1,4 @@
 # slushies
+This is a weather information website made with Flask and deployed on Vercel (at https://slushies-murex.vercel.app/). The app uses openweatherapp.org's API keys to receive weather data on cities around the globe. Type in a city and country to find the temperature, humidity, and wind speed.
+
+While originally made for Hack Club's Slushies program, after some updates it was instead submitted to Hack Club: The Game. This is the first dynamic website I made and the first time I used a framework. I followed the Slushies "Getting Started" presentation slide tutorial to learn the basic structure and then added the weather feature after watching YouTube explanations. I also included scientific definitions.
