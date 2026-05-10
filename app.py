@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 api_key = "ad505b93e564160d19e153dd3ba6fa92"
 
-@app.route('/', methods = ['GET', 'POST', 'BACK', 'INTERPRET'])
+@app.route('/', methods = ['GET', 'POST', 'BACK'])
 def index():
     if request.method == "POST":
         city = request.form['city']
