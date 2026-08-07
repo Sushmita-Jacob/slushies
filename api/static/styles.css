@@ -1,5 +1,44 @@
 html, body {
-    background-color: black;
-    color: white;
+    background-color: lightblue;
+    color: black;
     text-align: center;
+}
+
+.cloud {
+    position: relative;
+    margin-top: 100px;
+    width: 350px;
+    height: 120px;
+    background: white;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    animation: cloudani 5s infinite;
+}
+
+.cloud:after, .cloud:before {
+    content:"";
+    position: relative;
+    display: inline-block;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.cloud::after {
+    width: 120px;
+    height: 120px;
+    top: -100px;
+    left: -150px;
+}
+
+.cloud::before {
+    width: 180px;
+    height: 180px;
+    top: -70px;
+    left: 130px;
+}
+
+@keyframes cloudani {
+    0% {left: 130px;}
+    50% {left: 700px;}
+    100% {left: 130px;}
 }
