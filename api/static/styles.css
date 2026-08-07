@@ -12,7 +12,7 @@ html, body {
     background: white;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
     border-radius: 100px;
-    animation: cloudani 5s infinite;
+    animation: cloudani 15s infinite;
 }
 
 .cloud:after, .cloud:before {
@@ -38,7 +38,7 @@ html, body {
 }
 
 @keyframes cloudani {
-    0% {left: 130px;}
-    50% {left: 700px;}
-    100% {left: 130px;}
+    0% {transform: translateX(-25vw);}
+    50% {transform: translateX(100vw);}
+    100% {transform: translateX(-25vw);}
 }
