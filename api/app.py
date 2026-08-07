@@ -1,9 +1,12 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
 import requests
 import json
+load_dotenv()
 
 app = Flask(__name__)
-api_key = "ad505b93e564160d19e153dd3ba6fa92"
+api_key = os.getenv("api_key")
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
