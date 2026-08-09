@@ -25,6 +25,11 @@ def index():
                 "index.html",
                 error="Invalid city or country, try again."
             )
+        if weather_url.status_code != 200:
+            return render_template(
+                "index.html",
+                error="Internal error. Make sure to input a city and country or try again later."
+            )
         weather_data = weather_url.json()
         temp = round(weather_data['main']['temp'])
         humidity = weather_data['main']['humidity']
