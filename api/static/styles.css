@@ -42,3 +42,7 @@ html, body {
     50% {transform: translateX(100vw);}
     100% {transform: translateX(-25vw);}
 }
+
+.error {
+    color:red;
+}
