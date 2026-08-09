@@ -4,7 +4,6 @@ from flask import Flask, render_template, request
 import requests
 import json
 load_dotenv()
-#test
 
 app = Flask(__name__)
 api_key = os.getenv("api_key")
@@ -15,12 +14,22 @@ def index():
         city = request.form['city']
         country = request.form['country']
         api_key = os.getenv("api_key")
+        error = None
+        if not city:
+            error = "Enter a city."
+        if not country:
+            error = "Enter a country."
         weather_url = requests.get(f'http://api.openweathermap.org/data/2.5/weather?appid={api_key}&q={city},{country}&units=imperial')
+        if weather_url.status_code == 404:
+            return render_template(
+                "index.html",
+                error="Invalid city or country, try again."
+            )
         weather_data = weather_url.json()
         temp = round(weather_data['main']['temp'])
         humidity = weather_data['main']['humidity']
         wind_speed = weather_data['wind']['speed']
-        return render_template("result.html", temp=temp, humidity=humidity, wind_speed=wind_speed, city=city)
+        return render_template("result.html", temp=temp, humidity=humidity, wind_speed=wind_speed, city=city, error=error)
     if request.method == "GET":
         return render_template("index.html")
     user_name = "Mustafa"
